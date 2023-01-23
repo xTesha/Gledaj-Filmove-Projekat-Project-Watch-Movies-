@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<div class="registerForma">
+	<div>
+		<div>
+			<form action="{{url_for('login')}}" method="POST" class="form_nova">
+				<div class="register">
+					<label form="email">Email adresa</label>
+					<input type="email" id="inputEmail" name="email" required >
+				</div>
+				<div>
+					<label>Lozinka</label>
+					<input type="password" id="inputPassword" name="lozinka" required>
+				</div>
+				<div class="registerbtn">
+				<a href="{{url_for('login')}}" onclick="onLogin()"><button type="submit" class="registerbtn">Prijavi se</button></a>
+				</div>
+				<p>Nemate nalog? Registrujte se! <a href="{{url_for('render_korisnik_novi')}}">Registracija</a>.</p>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+{%endblock%}

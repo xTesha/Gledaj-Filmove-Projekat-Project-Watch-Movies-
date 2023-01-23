@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="/static/jquery-3.6.0.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/fontawesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<link rel="icon" type="image/x-icon" href="/static/images/logo1.png">
+	<title>{{title}}</title>
+</head>
+<body>
+
+	<header>
+		<ul class="navbar">
+			<li><a href="/home"><img src="/static/images/logo1.png"></a></li>
+			<li><a href="/home">HOME</a></li>
+		</ul>
+		
+		<form id="form" class="formica">
+			<div class="container">
+			  <input type="text" placeholder="Search..." id="search">
+			  <div class="search"></div>
+			</div>
+
+			<div id="user-nav-logged-in">
+				{% if logged_in %} 
+				<span class="imeKorisnika">{{ session['ulogovani_korisnik']['korisnickoime'] }}</span>
+				<a href="{{ url_for('logout') }}"><i class="fa-solid fa-right-from-bracket"></i></a>
+			</div>
+		
+			{% endif %}
+
+		</form>
+		
+	</header>
+
+	{% block content %}
+
+
+
+	{% endblock %}
+
+	<footer align="bottom">Made with <span class="crveno"><strike>sweat</strike></span> Love by: Andrija Tesovic, Milos Petrovic, Miladin Grujic<br>&copy; Copyright Reserved</footer>
+
+<script src="/static/rating.js"></script>
+<script src="/static/fontawesome/js/all.js"></script>
+<script src="/static/script.js" type="module"></script>
+</body>
+</html>

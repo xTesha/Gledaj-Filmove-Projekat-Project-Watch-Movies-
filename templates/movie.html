@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="ekran">
+<h1 class="naslovv" align="center">{{title}}</h1>
+<div class="filmWithStats">	
+<iframe align="center" id="iframe" src="https://2embed.org/embed/movie?tmdb={{id}}"  align="center" frameborder="0" controls></iframe>
+<p class="opis">Opis filma: <br><br>{{overview}}</p>
+
+</div>
+<!-- KOMENTARI KOJI SU UZASNI!
+<input type="text" id="comment-box" placeholder="Enter comment">
+    <button id="post">Post</button>
+    <ul id="unordered">
+       
+   </ul>
+-->   
+
+</div>
+
+
+{% endblock %}

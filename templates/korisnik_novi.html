@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+<div class="registerForma"> 
+
+	<form action=" " method="POST" class="form_nova">
+		<div class="register">
+			<label for="korisnickoime">Korisnicko Ime: </label>
+			<input type="text" name="korisnickoime" required>
+		</div>
+		<div>
+			<label for="email">Email: </label>
+			<input type="text" name="email" required>
+		</div>
+		<div>
+			<label for="lozinka">Lozinka: </label>
+			<input type="password" name="lozinka" required>
+		</div>
+		<div class="registerbtn">
+		<a href="{{url_for('login')}}"><button type="submit" class="registerbtn">Register</button></a>
+		</div>
+		<div class="signin">
+    		<p>Vec imate nalog? Ulogujte se! <a href="{{url_for('login')}}">Uloguj se</a>.</p>
+  		</div>
+	</form>
+</div>
+<div id="alert-box" class="alert-box hidden">Korisnicko ime vec postoji</div>
+{%endblock%}
