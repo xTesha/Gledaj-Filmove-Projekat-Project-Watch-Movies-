@@ -1,0 +1,407 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: sans-serif;
+	background-color: #120c28;
+}
+
+
+header{
+	height: 100px;
+	background-color: #201547;
+	position: relative;
+}
+
+ul{
+	float: left;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+
+
+}
+
+
+ ul li {
+ 	padding-left: 40px;
+ 	padding-top: 35px;
+
+ }
+
+ ul li img{
+  width: 60px;
+  position: absolute;
+  top: 20px;
+  left: 9px;
+
+ }
+
+
+
+ul li a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 25px;
+
+
+}
+form{
+	float: right;
+	padding: 35px;
+}
+
+form a{
+	text-decoration: none;
+	color: grey;
+	transition: 0.3s;
+	font-size: 25px;
+
+
+}
+
+
+form a:hover{
+	color: #fff;
+
+}
+
+
+#main{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 40px;
+}
+
+#main .movie{
+	color: #fff;
+	width: 300px;
+	margin: 1rem;
+	border-radius: 5px;
+	box-shadow: 0.2 4px 5px rgba(0,0,0,0.1 );
+  position: relative;
+	
+}
+
+.movie img{
+	width: 100%;
+	border-radius: 10px;
+}
+
+.movie img:hover{
+	width: %;
+	border-radius: 30px;
+	transform: translate(0,-10px);
+}
+
+
+/*SEARCH*/
+
+.container {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  height: 50px;
+}
+.container .search {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: crimson;
+  border-radius: 50%;
+  transition: all 1s;
+  z-index: 4;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+}
+.container .search:hover {
+  cursor: pointer;
+}
+.container .search::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: 22px;
+  right: 0;
+  bottom: 0;
+  left: 22px;
+  width: 12px;
+  height: 2px;
+  background: white;
+  transform: rotate(45deg);
+  transition: all 0.5s;
+}
+.container .search::after {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: -5px;
+  right: 0;
+  bottom: 0;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: all 0.5s;
+}
+.container input {
+  font-family: "Inconsolata", monospace;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background: crimson;
+  color: white;
+  text-shadow: 0 0 10px crimson;
+  padding: 0 80px 0 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  transition: all 1s;
+  opacity: 0;
+  z-index: 5;
+  font-weight: bolder;
+  letter-spacing: 0.1em;
+}
+.container input:hover {
+  cursor: pointer;
+}
+.container input:focus {
+  width: 300px;
+  opacity: 1;
+  cursor: text;
+}
+.container input:focus ~ .search {
+  right: -250px;
+  background: #151515;
+  z-index: 6;
+}
+.container input:focus ~ .search::before {
+  top: 0;
+  left: 0;
+  width: 25px;
+}
+.container input:focus ~ .search::after {
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 2px;
+  border: none;
+  background: white;
+  border-radius: 0%;
+  transform: rotate(-45deg);
+}
+.container input::placeholder {
+  color: white;
+  opacity: 0.5;
+  font-weight: bolder;
+}
+
+.detalji{
+  padding: 10px;
+  background-color: #201547;
+  border-radius: 4px;
+}
+
+.naslovv{
+  color: whitesmoke;
+  padding-top: 30px;
+}
+
+.rejting{
+  color: grey;
+}
+.filmWithStats{
+ display: flex;
+ padding: 20px;
+
+}
+
+iframe{
+  margin: auto;
+}
+
+
+.imeKorisnika{
+  color: orangered;
+  border: red 2px solid;
+  padding: 5px;
+  font-size: 15px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  margin: auto;
+}
+
+#comment-box, #post {
+    border: none;
+    border-radius: 5px;
+    display: block;
+}
+#post:hover{
+    background-color: deeppink;
+}
+
+#unordered li{
+  background-color: white;
+}
+
+.opis{
+  margin-left: 5px;
+  border-radius: 10px;
+  padding: 30px;
+  height: 100px;
+  background-color: #201547 ;
+  font-size: 15px;
+  font-family: sans-serif;
+  color: crimson;
+  width: 500px;
+  display: block;
+  font-weight: bold;
+  height: 200px;
+}
+
+footer{
+  height: 50px;
+  background-color: #201547;
+  color: floralwhite;
+  font-family: sans-serif;
+  font-size: 15px;
+  width: 100%;
+  font-weight: bold;
+  padding: 15px;
+  padding-bottom: 10px;
+  margin-top: auto;
+}
+.crveno{
+  color: red;
+}
+#iframe{
+  width: 1280px;
+  height: 450px;
+}
+
+/*SCROLL BAR*/
+
+::-webkit-scrollbar {
+  background-color: #000;
+  width: 12px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.5, #a520ca),
+    color-stop(1, #2681cc)
+  );
+  border-radius: 10px;
+}
+
+.ekran{
+  height: 100vh;
+}
+
+
+/*DEO ZA REGISTER i LOGIN*****************************************************************************/
+
+
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=email] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+  margin-top: 15px;
+}
+.signin a{
+  color: dodgerblue;
+}
+
+.registerForma{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  padding-top: 30px;
+}
+.form_nova{
+  color: green;
+  display: block;
+
+}
+form a{
+  text-decoration: none;
+  color: grey;
+  transition: 0.3s;
+  font-size: 25px;
+}
+
+
+form a:hover{
+  color: #fff;
+}
