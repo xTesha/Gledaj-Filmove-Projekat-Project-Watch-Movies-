@@ -1,9 +1,9 @@
 # movies
 Filmovi
 
-*
+
 This is web application for watching movies for free without ads (school project)
-*
+
 
 *
 Application have very little backend so if you want to run it:
