@@ -7,7 +7,6 @@ This is web application for watching movies for free without ads (school project
 
 *
 Application have very little backend so if you want to run it:
-
 1.Download XAMPP and run Apache and MySQL
 2.On phpmyadmin make data base with name "film"
 3.Then make table with name "korisnici"
