@@ -2,7 +2,7 @@
 Filmovi
 
 
-This is web application for watching movies for free without ads (school project)
+This is web application for watching movies for free without ads
 
 
 *
