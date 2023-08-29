@@ -1,4 +1,4 @@
-const api_key = 'api_key=c5632362513441998856f721496efc81';
+const api_key = 'api_key=putYourApiKeyHereAlso';
 const base_url = 'https://api.themoviedb.org/3';
 const LANGUAGE = 'language=hr'; 
 const api_url = base_url + '/trending/tv/week?' + LANGUAGE + '&' + api_key;
