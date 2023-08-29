@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="sr">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,27 +7,101 @@
 	<link rel="stylesheet" type="text/css" href="/static/fontawesome/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
 	<link rel="icon" type="image/x-icon" href="/static/images/logo1.png">
-	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
 	<title>{{title}}</title>
 </head>
 <body>
 
 	<header>
-		<ul class="navbar">
-			<li><a href="/home"><img src="/static/images/logo1.png"></a></li>
-			<li><a href="/home">HOME</a></li>
-		</ul>
+		<div class="mobilenav">
+		<div class="w3-teal">
+			<button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+		</div>
+		
+		<div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+			<button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+			<a href="/home" class="w3-bar-item w3-button">Filmovi</a>
+			<a href="/serije" class="w3-bar-item w3-button">Serije</a>
+			<a href="/wishlist" class="w3-bar-item w3-button">Watchlist</a>
+			<a href="{{ url_for('logout') }}" class="w3-bar-item w3-button">Logout</a>
+			<div class="w3-dropdown-hover">
+				<button class="w3-button">Kategorije filmova
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="w3-dropdown-content w3-bar-block">
+				  <a href="#" class="w3-bar-item w3-button category-btn" data-category-id="28">Akcija</a>
+				  <a href="#" class="w3-bar-item w3-button category-btn" data-category-id="12">Avantura</a>
+				  <a href="#" class="w3-bar-item w3-button category-btn" data-category-id="16">Animacija</a>
+				  <a href="#" class="w3-bar-item w3-button category-btn" data-category-id="35">Komedija</a>
+				  <a href="#" class="w3-bar-item w3-button category-btn" data-category-id="80">Krimi</a>
+				  <a href="#" class="w3-bar-item w3-button category-btn" data-category-id="99">Dokumentarni</a>
+				  <a href="#" class="w3-bar-item w3-button category-btn" data-category-id="10">Drama</a>
+				  <a href="#" class="w3-bar-item w3-button category-btn" data-category-id="10751">Porodični</a>
+				  <a href="#" class="w3-bar-item w3-button category-btn" data-category-id="14">Fantazija</a>
+				  <a href="#" class="w3-bar-item w3-button category-btn" data-category-id="36">Istorijski</a>
+				  <a href="#" class="w3-bar-item w3-button category-btn" data-category-id="27">Horor</a>
+				  <a href="#" class="w3-bar-item w3-button category-btn" data-category-id="10402">Muzički</a>
+				  <a href="#" class="w3-bar-item w3-button category-btn" data-category-id="9648">Misterija</a>
+				  <a href="#" class="w3-bar-item w3-button category-btn" data-category-id="10749">Romansa</a>
+				  <a href="#" class="w3-bar-item w3-button category-btn" data-category-id="878">Naučna fantastika</a>
+				  <a href="#" class="w3-bar-item w3-button category-btn" data-category-id="10770">TV filmovi</a>
+				  <a href="#" class="w3-bar-item w3-button category-btn" data-category-id="53">Trileri</a>
+				  <a href="#" class="w3-bar-item w3-button category-btn" data-category-id="10752">Ratni</a>
+				  <a href="#" class="w3-bar-item w3-button category-btn" data-category-id="37">Vestern</a>
+				</div>
+			  </div> 
+
+			  <div class="w3-dropdown-hover">
+				<button class="w3-button">Kategorije serija
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="w3-dropdown-content w3-bar-block">
+				  <a href="#" class="w3-bar-item w3-button series-btn" data-category-id="10759">Akcija i avantura</a>
+				  <a href="#" class="w3-bar-item w3-button series-btn" data-category-id="16">Animacija</a>
+				  <a href="#" class="w3-bar-item w3-button series-btn" data-category-id="35">Komedija</a>
+				  <a href="#" class="w3-bar-item w3-button series-btn" data-category-id="80">Krimi</a>
+				  <a href="#" class="w3-bar-item w3-button series-btn" data-category-id="99">Dokumentarni</a>
+				  <a href="#" class="w3-bar-item w3-button series-btn" data-category-id="18">Drama</a>
+				  <a href="#" class="w3-bar-item w3-button series-btn" data-category-id="10751">Porodični</a>
+				  <a href="#" class="w3-bar-item w3-button series-btn" data-category-id="10762">Dečji</a>
+				  <a href="#" class="w3-bar-item w3-button series-btn" data-category-id="9648">Misterija</a>
+				  <a href="#" class="w3-bar-item w3-button series-btn" data-category-id="10763">Vesti</a>
+				  <a href="#" class="w3-bar-item w3-button series-btn" data-category-id="10764">Reality</a>
+				  <a href="#" class="w3-bar-item w3-button series-btn" data-category-id="10765">Fantazija</a>
+				  <a href="#" class="w3-bar-item w3-button series-btn" data-category-id="10766">Serije</a>
+				  <a href="#" class="w3-bar-item w3-button series-btn" data-category-id="10767">Talk Show</a>
+				  <a href="#" class="w3-bar-item w3-button series-btn" data-category-id="10768">Ratni i politički</a>
+				  <a href="#" class="w3-bar-item w3-button series-btn" data-category-id="37">Vestern</a>
+				</div>
+			  </div> 
+			
+		  </div>
+		 </div> 
+
+
+
+			<ul class="navbar">
+			  <li><a href="/home"><img class="logo" src="/static/images/logo1.png"></a></li>
+			  <li><a href="/home">FILMOVI</a></li>
+			  <li><a href="/serije">SERIJE</a></li>
+			  <!--<li><a href="/uputstvo-za-prevod">PREVODI</a></li> -->
+			</ul>
+		
+		  
 		
 		<form id="form" class="formica">
 			<div class="container">
 			  <input type="text" placeholder="Search..." id="search">
 			  <div class="search"></div>
 			</div>
-
-			<div id="user-nav-logged-in">
 				{% if logged_in %} 
-				<span class="imeKorisnika">{{ session['ulogovani_korisnik']['korisnickoime'] }}</span>
-				<a href="{{ url_for('logout') }}"><i class="fa-solid fa-right-from-bracket"></i></a>
+			<div id="user-nav-logged-in">
+				
+				<span class="imeKorisnika">{{ session['ulogovani_korisnik']['korisnickoime'] }}
+					<div class="omeni"><a href="/watchlist">Watchlist</a><a href="{{ url_for('logout') }}">Logout</a></div>
+				</span>
+			
 			</div>
 		
 			{% endif %}
@@ -42,10 +116,8 @@
 
 	{% endblock %}
 
-	<footer align="bottom">Made with <span class="crveno"><strike>sweat</strike></span> Love by: Andrija Tesovic<br>&copy; Copyright Reserved</footer>
 
-<script src="/static/rating.js"></script>
 <script src="/static/fontawesome/js/all.js"></script>
-<script src="/static/script.js" type="module"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

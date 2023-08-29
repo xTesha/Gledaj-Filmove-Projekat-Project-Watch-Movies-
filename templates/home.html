@@ -1,10 +1,45 @@
 {% extends 'base.html ' %}
 
 {% block content %}
+<div class="opcija">
+    <h1 class="naslov">POPULARNO</h1>
+</div>
 
+
+<div class="categories">
+    <h3>KATEGORIJE</h3>
+    <button class="category-btn" data-category-id="28">Akcija</button>
+    <button class="category-btn" data-category-id="12">Avantura</button>
+    <button class="category-btn" data-category-id="16">Animacija</button>
+    <button class="category-btn" data-category-id="35">Komedija</button>
+    <button class="category-btn" data-category-id="80">Krimi</button>
+    <button class="category-btn" data-category-id="99">Dokumentarni</button>
+    <button class="category-btn" data-category-id="18">Drama</button>
+    <button class="category-btn" data-category-id="10751">Porodični</button>
+    <button class="category-btn" data-category-id="14">Fantazija</button>
+    <button class="category-btn" data-category-id="36">Istorijski</button>
+    <button class="category-btn" data-category-id="27">Horor</button>
+    <button class="category-btn" data-category-id="10402">Muzički</button>
+    <button class="category-btn" data-category-id="9648">Misterija</button>
+    <button class="category-btn" data-category-id="10749">Romansa</button>
+    <button class="category-btn" data-category-id="878">Naučna fantastika</button>
+    <button class="category-btn" data-category-id="10770">TV filmovi</button>
+    <button class="category-btn" data-category-id="53">Trileri</button>
+    <button class="category-btn" data-category-id="10752">Ratni</button>
+    <button class="category-btn" data-category-id="37">Vestern</button>
+  </div>
 
 <div id="main">
-	
+    
+</div>
+
+<div class="pagination">
+    <button class="btn-nav left-btn" onclick="previousPage()"><</button>
+    <span class="current-page"></span>
+    <button class="btn-nav right-btn" onclick="nextPage()">></button>
+</div>
+<div id="footer">
+	<footer align="bottom">Made with <span class="crveno"><strike>sweat</strike></span> Love by: Andrija Tesovic<br>&copy; Copyright Reserved</footer>
 </div>
 
 {% endblock %}

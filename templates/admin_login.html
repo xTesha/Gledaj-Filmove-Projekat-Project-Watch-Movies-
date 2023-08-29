@@ -1,0 +1,31 @@
+<!-- admin_login.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+</head>
+<body>
+    <h1>Admin Login</h1>
+    <div class="registerForma">
+        <div>
+            <div>
+                <form action="{{url_for('admin_login')}}" method="POST">
+                    <div class="register">
+                        <label form="korisnickoime">Korisnicko Ime</label>
+                        <input type="text" id="korisnickoime" name="korisnickoime" required >
+                    </div>
+                    <div>
+                        <label>Lozinka</label>
+                        <input type="password" id="lozinka" name="lozinka" required>
+                    </div>
+                    <div class="registerbtn">
+                    <a href="{{url_for('admin_login')}}" ><button type="submit" class="registerbtn">Prijavi se</button></a>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

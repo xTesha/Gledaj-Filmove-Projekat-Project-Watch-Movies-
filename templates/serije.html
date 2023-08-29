@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="opcija">
+    <h1 class="naslov">POPULARNO</h1>
+</div>
+
+<div class="categories">
+    <h3>KATEGORIJE</h3>
+    <button class="category-btn series-btn" data-category-id="10759">Akcija i avantura</button>
+    <button class="category-btn series-btn" data-category-id="16">Animacija</button>
+    <button class="category-btn series-btn" data-category-id="35">Komedija</button>
+    <button class="category-btn series-btn" data-category-id="80">Krimi</button>
+    <button class="category-btn series-btn" data-category-id="99">Dokumentarni</button>
+    <button class="category-btn series-btn" data-category-id="18">Drama</button>
+    <button class="category-btn series-btn" data-category-id="10751">Porodični</button>
+    <button class="category-btn series-btn" data-category-id="10762">Dečji</button>
+    <button class="category-btn series-btn" data-category-id="9648">Misterija</button>
+    <button class="category-btn series-btn" data-category-id="10763">Vesti</button>
+    <button class="category-btn series-btn" data-category-id="10764">Reality</button>
+    <button class="category-btn series-btn" data-category-id="10765">Fantazija</button>
+    <button class="category-btn series-btn" data-category-id="10766">Serije</button>
+    <button class="category-btn series-btn" data-category-id="10767">Talk show</button>
+    <button class="category-btn series-btn" data-category-id="10768">Ratni i politički</button>
+    <button class="category-btn series-btn" data-category-id="37">Vestern</button>
+</div>
+
+
+    <div id="main">
+        <!-- Ovde će se prikazivati serije -->
+    </div>
+    
+
+    <div class="pagination">
+        <button class="btn-nav left-btn" onclick="previousPage()"><</button>
+        <span class="current-page"></span>
+        <button class="btn-nav right-btn" onclick="nextPage()">></button>
+    </div>
+
+    <script src="{{ url_for('static', filename='serije.js') }}"></script>
+{% endblock %}

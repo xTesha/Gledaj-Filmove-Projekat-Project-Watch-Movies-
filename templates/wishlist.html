@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="watchMovies" id="watchlistContainer">
+  {% for film in wishlist_films %}
+    <div class="movie-info">
+      <a href="/movie/{{film.movie_id}}?title={{film.title}}&overview={{film.opis}}">
+        <img class="movieImage" src="https://image.tmdb.org/t/p/w500{{ film.poster_path }}" alt="{{ film.title }}">
+      </a>
+      <span class="movie-title">{{film.title}}</span>
+      <button class="removeMovieButton custom-btn btn-10" data-movie-id="{{ film.movie_id }}"><i class="fas fa-times"></i>
+      </button>
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+// Funkcija za uklanjanje filma iz watchlist-e
+function ukloniFilmIzWatchlist(filmId) {
+  const data = {
+    filmId: filmId
+  };
+
+  fetch('/removeFromWatchlist', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(result => {
+    if (result.success) {
+      // Uspješno uklanjanje filma iz watchlist-e
+      location.reload();
+    
+    } else {
+      // Neuspješno uklanjanje filma iz watchlist-e
+      console.error('Greška prilikom uklanjanja filma iz watchlist-e:', result.message);
+    }
+  })
+  .catch(error => {
+    console.error('Greška prilikom slanja zahtjeva:', error);
+  });
+}
+
+// Dodavanje event listenere na ikone uklanjanja filma iz watchlist-e
+const removeButtons = document.querySelectorAll('.removeMovieButton');
+
+removeButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const filmId = button.dataset.movieId;
+    ukloniFilmIzWatchlist(filmId);
+  });
+});
+
+</script>
+
+
+	<footer>Made with <span class="crveno"><strike>sweat</strike></span> Love by: Andrija Tesovic<br>&copy; Copyright Reserved</footer>
+
+{% endblock %}

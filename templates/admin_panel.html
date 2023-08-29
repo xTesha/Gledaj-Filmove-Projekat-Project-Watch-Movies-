@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+</head>
+<body>
+    <h1>KOMENTARI ZA ODOBRAVANJE</h1>
+    <div>
+        {% for komentar in komentari %}
+            <p>{{ komentar['sadrzaj'] }}</p>
+            <span>Akcije:
+                <form action="{{ url_for('odobri_komentar', komentar_id=komentar['id']) }}" method="POST" 
+                style="display: inline;">
+                    <button type="submit">Odobri</button>
+                </form>
+                <form action="{{ url_for('obrisi_komentar', komentar_id=komentar['id']) }}" method="POST" 
+                style="display: inline;">
+                    <button type="submit">Obriši</button>
+                </form>
+            </span><br>
+            <span>---------------------------------------------------------------</span>
+        {% endfor %}
+    </div>
+</body>
+</html>
