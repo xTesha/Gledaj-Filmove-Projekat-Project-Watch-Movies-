@@ -1,5 +1,5 @@
 // Ostatak vašeg postojećeg koda
-const API_KEY = 'api_key=c5632362513441998856f721496efc81';
+const API_KEY = 'api_key=hereYouPlaceYourApiKey';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const LANGUAGE = 'language=hr';
 const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + LANGUAGE + '&' + API_KEY;
