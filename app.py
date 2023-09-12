@@ -297,4 +297,4 @@ def logout():
     return redirect(url_for("render_korisnik_novi"))
 
 
-app.run(debug = True)
+app.run(debug = False, host='0.0.0.0')
